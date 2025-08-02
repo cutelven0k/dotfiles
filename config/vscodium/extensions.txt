@@ -1,0 +1,15 @@
+adpyke.codesnap
+christian-kohler.path-intellisense
+deerawan.vscode-faker
+grayjack.monokai-grayjack
+kylinideteam.cmake-intellisence
+littensy.charmed-icons
+mhutchie.git-graph
+ms-vscode.cmake-tools
+ms-vscode.cpptools
+oderwat.indent-rainbow
+twxs.cmake
+usernamehw.errorlens
+vivaxy.vscode-conventional-commits
+xaver.clang-format
+zaaack.markdown-editor
