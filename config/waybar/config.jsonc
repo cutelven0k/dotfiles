@@ -1,0 +1,80 @@
+{
+    "layer": "top",
+    "reload_style_on_change": true,
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/mode"
+    ],
+    "modules-center": [
+        "cpu",
+        "memory"
+    ],
+    "modules-right": [
+        "network",
+        "bluetooth",
+        "pulseaudio",
+        "battery",
+        "clock",
+        "tray"
+    ],
+    "clock": {
+        "interval": 15,
+        "format": "{:%H:%M}"
+    },
+    "pulseaudio": {
+        "format-muted": "▅▅▅▅▅",
+        "format-null": "▁▁▁▁▁",
+        "format-20": "▃▁▁▁▁",
+        "format-40": "▃▄▁▁▁",
+        "format-60": "▃▄▅▁▁",
+        "format-80": "▃▄▅▆▁",
+        "format-100": "▃▄▅▆▇",
+        "on-click": "kitty -e ncpamixer",
+        "states": {
+            "null": 0,
+            "20": 20,
+            "40": 40,
+            "60": 60,
+            "80": 80,
+            "100": 100
+        }
+    },
+    "battery": {
+        "interval": 15,
+        "states": {
+            "critical": 20,
+            "40": 40,
+            "60": 60,
+            "80": 80,
+            "100": 100
+        },
+        "format-critical": "▇▁▁▁▁",
+        "format-40": "▇▇▁▁▁",
+        "format-60": "▇▇▇▁▁",
+        "format-80": "▇▇▇▇▁",
+        "format-100": "▇▇▇▇▇"
+    },
+    "bluetooth": {
+        "format": "😇",
+        "format-disabled": "👿",
+        "on-click": "kitty -e bluetui"
+    },
+    "network": {
+        "interface": "wlan0",
+        "format": "🙂",
+        "format-disconnected": "😡",
+        "on-click": "kitty -e impala"
+    },
+    "cpu": {
+        "format": "cpu: {}%",
+        "interval": 5
+    },
+    "memory": {
+        "interval": 5,
+        "format": "mem: {}%"
+    },
+    "tray": {
+        "icon-size": 12,
+        "spacing": 10
+    }
+}
