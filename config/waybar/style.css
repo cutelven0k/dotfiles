@@ -56,16 +56,13 @@ button {
     color: #FFCC66;
 }
 
-#clock {
-    color: #C792EA;
+#clock,
+#pulseaudio {
+    color: #FF99FF;
 }
 
 #network {
     color: #66CCFF;
-}
-
-#pulseaudio {
-    color: #FF99FF;
 }
 
 #tray {
