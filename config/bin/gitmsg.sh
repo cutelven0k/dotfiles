@@ -39,6 +39,16 @@ if (( HELP )); then
     exit 0
 fi
 
+check_dependencies() {
+    if (( VERBOSE )); then
+        check_package.sh --verbose tgpt git || exit 1
+    else
+        check_package.sh tgpt git || exit 1
+    fi
+}
+
+check_dependencies
+
 git rev-parse --is-inside-work-tree &>/dev/null || {
     echo -e "${RED}Not a git repository.${NC}"
     exit 1
@@ -51,8 +61,7 @@ if [ -z "$diff" ]; then
 fi
 
 if (( VERBOSE )); then
-    echo -e "${GREEN}Detected staged changes:${NC}"
-    echo -e "$diff"
+    echo -e "${GREEN}Staged changes detected!${NC}"
 fi
 
 tgpt --provider pollinations "short conventional commit message, no extra explanation: $diff"
