@@ -6,6 +6,7 @@ RED="\033[0;31m"
 NC="\033[0m"
 
 VERBOSE=0
+HELP=0
 
 ARGS=()
 for arg in "$@"; do
@@ -13,11 +14,26 @@ for arg in "$@"; do
         --verbose)
             VERBOSE=1
             ;;
+        --help)
+            HELP=1
+            ;;
         *)
             ARGS+=("$arg")
             ;;
     esac
 done
+
+print_help() {
+    echo -e "${GREEN}Usage:${NC} $(basename $0) [OPTIONS] <packages>"
+    echo -e "Check if the specified packages are installed."
+    echo -e ""
+    echo -e "${GREEN}Options:${NC}"
+    echo -e "   --verbose     Enable verbose mode to print debug messages."
+    echo -e "   --help        Show this help message."
+    echo -e ""
+    echo -e "${GREEN}Example:${NC}"
+    echo -e "   $(basename $0) --verbose libnotify"
+}
 
 check_package() {
     local pkg="$1"
@@ -39,9 +55,9 @@ check_package() {
 }
 
 
-if [ ${#ARGS[@]} -eq 0 ]; then
-    echo -e "${RED}No packages provided. Please specify packages to check.${NC}"
-    exit 1
+if (( HELP )) || [ ${#ARGS[@]} -eq 0 ]; then
+    print_help
+    exit 0
 fi
 
 for package in "${ARGS[@]}"; do
