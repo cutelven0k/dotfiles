@@ -39,7 +39,7 @@ check_dependencies() {
     if (( VERBOSE )); then
         check_package.sh --verbose wofi gawk sed coreutils libnotify procps-ng || exit 1
     else
-        check_package.sh wofi wofi gawk sed coreutils libnotify procps-ng || exit 1
+        check_package.sh wofi gawk sed coreutils libnotify procps-ng || exit 1
     fi
 }
 
