@@ -50,13 +50,13 @@ check_dependencies() {
 check_dependencies
 
 git rev-parse --is-inside-work-tree &>/dev/null || {
-    echo -e "${RED}Not a git repository.${NC}"
+    (( VERBOSE )) && echo -e "${RED}Not a git repository.${NC}"
     exit 1
 }
 
 diff=$(git diff --staged)
 if [ -z "$diff" ]; then
-    echo -e "${RED}No staged changes to commit.${NC}"
+    (( VERBOSE )) && echo -e "${RED}No staged changes to commit.${NC}"
     exit 1
 fi
 
