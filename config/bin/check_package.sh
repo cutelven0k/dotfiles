@@ -5,26 +5,45 @@ YELLOW="\033[0;33m"
 RED="\033[0;31m"
 NC="\033[0m"
 
-check_package() {
-    echo -e "${YELLOW}Checking package: $1...${NC}"
+VERBOSE=0
 
-    if pacman -Qi "$1" &>/dev/null; then
-        echo -e "${GREEN}Package $1 is installed.${NC}"
+ARGS=()
+for arg in "$@"; do
+    case "$arg" in
+        --verbose)
+            VERBOSE=1
+            ;;
+        *)
+            ARGS+=("$arg")
+            ;;
+    esac
+done
+
+check_package() {
+    local pkg="$1"
+    if (( VERBOSE )); then
+        echo -e "${YELLOW}Checking package: $pkg...${NC}"
+    fi
+
+    if pacman -Qi "$pkg" &>/dev/null; then
+        (( VERBOSE )) && echo -e "${GREEN}Package $pkg is installed.${NC}"
+        return 0  
     else
-        if pacman -Ss "$1" &>/dev/null; then
-            echo -e "${RED}Package $1 is not installed, but is available in the pacman repositories. Please install it with 'pacman -S $1'.${NC}"
+        if pacman -Ss "$pkg" &>/dev/null; then
+            (( VERBOSE )) && echo -e "${RED}Package $pkg is not installed, but is available in the pacman repositories.${NC}"
         else
-            echo -e "${RED}Package $1 is not found in the pacman repositories.${NC}"
+            (( VERBOSE )) && echo -e "${RED}Package $pkg is not found in the pacman repositories.${NC}"
         fi
         return 1
     fi
 }
 
-if [ $# -eq 0 ]; then
+
+if [ ${#ARGS[@]} -eq 0 ]; then
     echo -e "${RED}No packages provided. Please specify packages to check.${NC}"
     exit 1
 fi
 
-for package in "$@"; do
-    check_package "$package" || exit 1
+for package in "${ARGS[@]}"; do
+    check_package "$package"
 done
