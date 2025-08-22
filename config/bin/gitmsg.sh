@@ -64,4 +64,4 @@ if (( VERBOSE )); then
     echo -e "${GREEN}Staged changes detected!${NC}"
 fi
 
-tgpt --provider pollinations "short conventional commit message, no extra explanation: $diff"
+tgpt --provider pollinations "detailed conventional commit message, no extra explanation: $diff"
