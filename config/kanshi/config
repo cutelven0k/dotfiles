@@ -1,0 +1,20 @@
+profile {
+    output eDP-1 enable
+}
+
+profile {
+    output eDP-1 disable
+    output HDMI-A-1 enable
+}
+
+output "HDMI-A-1" {
+    mode 1920x1080@165
+    position 0,0
+    scale 1
+}
+
+output "eDP-1" {
+    mode 1920x1200@59.95
+    position 0,0
+    scale 1.25
+}
