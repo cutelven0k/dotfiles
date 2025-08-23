@@ -1,0 +1,23 @@
+title-text: "WELCOME TO GRUB BITCH"
+title-color: "#FFFFFF"
+
+desktop-color: "#000000"
+terminal-left: "0%"
+terminal-top: "0%"
+terminal-width: "100%"
+terminal-height: "100%"
+
+desktop-image: "background.png"
+
++ boot_menu {
+    left = 0%
+    width = 25%
+    top = 80%
+    height = 20%
+    item_color = "#D6DEE4"
+    selected_item_color = "#B18CFF"
+    item_height = 40
+    item_padding = 15
+    item_spacing = 10
+    scrollbar_width = 0
+}
