@@ -12,4 +12,5 @@ twxs.cmake
 usernamehw.errorlens
 vivaxy.vscode-conventional-commits
 xaver.clang-format
+yzane.markdown-pdf
 zaaack.markdown-editor
