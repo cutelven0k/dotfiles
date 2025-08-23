@@ -1,80 +1,150 @@
 {
-    "layer": "top",
-    "reload_style_on_change": true,
+    "layer": "bottom",
+    "position": "top",
+
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/mode"
+        "hyprland/workspaces"
     ],
+
     "modules-center": [
-        "cpu",
-        "memory"
+        "clock"
     ],
+
     "modules-right": [
+        "mpd",
+        "custom/separator",
+        "custom/weather",
+        "custom/separator",
         "network",
         "bluetooth",
+        "custom/airplane_mode",
+        "custom/separator",
         "pulseaudio",
+        "custom/separator",
+        "custom/layout",
+        "custom/separator",
         "battery",
-        "clock",
+        "custom/separator",
         "tray"
     ],
-    "clock": {
-        "interval": 15,
-        "format": "{:%H:%M}"
+
+    "custom/layout": {
+        "exec": "layout.sh",
+        "interval": 1,
+        "format": "{}",
+        "tooltip": false
     },
-    "pulseaudio": {
-        "format-muted": "▅▅▅▅▅",
-        "format-null": "▁▁▁▁▁",
-        "format-20": "▃▁▁▁▁",
-        "format-40": "▃▄▁▁▁",
-        "format-60": "▃▄▅▁▁",
-        "format-80": "▃▄▅▆▁",
-        "format-100": "▃▄▅▆▇",
-        "on-click": "kitty -e ncpamixer",
-        "states": {
-            "null": 0,
-            "20": 20,
-            "40": 40,
-            "60": 60,
-            "80": 80,
-            "100": 100
-        }
-    },
-    "battery": {
-        "interval": 15,
-        "states": {
-            "critical": 20,
-            "40": 40,
-            "60": 60,
-            "80": 80,
-            "100": 100
+
+    "mpd": {
+        "format": "{stateIcon}",
+        "format-disconnected": "",
+        "tooltip-format": "{artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
+        "state-icons": {
+            "paused": "",
+            "playing": ""
         },
-        "format-critical": "▇▁▁▁▁",
-        "format-40": "▇▇▁▁▁",
-        "format-60": "▇▇▇▁▁",
-        "format-80": "▇▇▇▇▁",
-        "format-100": "▇▇▇▇▇"
+        "interval": 1,
+        "on-click": "kitty -e rmpc "
     },
+
+    "custom/weather": {
+        "exec": "weather.sh Moscow",
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": true,
+        "interval": 1800
+    },
+
+    "clock": {
+        "interval": 60,
+        "tooltip": true,
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%d/%m/%Y}"
+    },
+
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "{icon}",
+        "format-icons": {
+            "headphone": "󰋋",
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
+        },
+        "scroll-step": 1,
+        "on-click": "kitty -e ncpamixer"
+    },
+
     "bluetooth": {
-        "format": "😇",
-        "format-disabled": "👿",
-        "on-click": "kitty -e bluetui"
+        "format": "",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂰",
+        "on-click": "kitty -e bluetui",
+        "tooltip-format": "{num_connections}"
     },
+
     "network": {
         "interface": "wlan0",
-        "format": "🙂",
-        "format-disconnected": "😡",
-        "on-click": "kitty -e impala"
+        "format": "{icon}",
+        "format-disconnected": "󰣽",
+        "format-disabled": "󰣽",
+        "on-click": "kitty -e impala",
+        "format-icons": [
+            "󰢿",
+            "󰢽",
+            "󰢽",
+            "󰢾"
+        ],
+        "interval": 1,
+        "tooltip-format": "{ifname}"
     },
-    "cpu": {
-        "format": "cpu: {}%",
-        "interval": 5
+
+    "custom/airplane_mode": {
+        "format": "{icon}",
+        "format-icons": {
+            "on": "󰀞",
+            "off": "󰀝"
+        },
+        "exec": "airplane_mode.sh status",
+        "interval": 1,
+        "return-type": "json",
+        "on-click": "airplane_mode.sh toggle"
     },
-    "memory": {
-        "interval": 5,
-        "format": "mem: {}%"
+
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "states": {
+            "critical": 20
+        },
+        "format-icons": [
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ],
+        "interval": 1,
+        "events": {
+            "on-discharging-critical": "battery.sh --critical",
+            "on-charging-100": "battery.sh --full"
+        }
     },
+
     "tray": {
-        "icon-size": 12,
+        "icon-size": 13,
         "spacing": 10
+    },
+
+    "custom/separator": {
+        "format": "|",
+        "interval": "once"
     }
 }
