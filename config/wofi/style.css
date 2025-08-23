@@ -1,50 +1,50 @@
-* {
-    font-family: "Fira Code";
-    font-size: 14px;
-}
-
 window {
-    background-color: #161821;
-    color: #D8DEE9;
-    border: none;
-    margin: 0;
+    background-color: transparent;
+    font: Fira Code;
 }
 
 #input {
-    background-color: #2E3440;
-    color: #D8DEE9;
-    border: none;
-    border-radius: 0;
-    padding: 3px;
+    margin: 5px;
+    border: 1px solid #B18CFF;
+    color: #D6DEE4;
+    background-color: #1B1D2E;
 }
 
-#inner-box,
+#input:focus {
+    box-shadow: none;
+}
+
+#inner-box {
+    border: none;
+    background-color: #1B1D2E;
+}
+
 #outer-box {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-}
-
-#scroll {
-    margin: 0;
-    border: none;
+    margin: 5px;
+    border: 2px solid #B18CFF;
+    border-radius: 4px;
+    background-color: #1B1D2E;
 }
 
 #text {
-    color: #D8DEE9;
-    margin: 0 8px;
+    margin: 5px;
+    border: none;
+    color: #D6DEE4;
+}
+
+#text:selected {
+    color: #B18CFF;
+    text-shadow: 0 0 4px #B18CFF;
 }
 
 #entry {
-    border: none;
-    padding: 6px 10px;
-    color: #D8DEE9;
-    background-color: transparent;
+    margin: 5px;
 }
 
 #entry:selected {
-    background-color: #2E3440;
-    color: #FF88B3;
-    border-left: 2px solid #FF88B3;
+    background-color: #1B1D2E;
+    border: 1px solid #B18CFF;
+    border-radius: 4px;
+    color: #B18CFF;
+    box-shadow: 0 0 4px #B18CFF;
 }

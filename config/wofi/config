@@ -1,7 +1,9 @@
+mode=drun
+filter_rate=50
 insensitive=true
-matching=fuzzy
-sort_order=alphabetical
-location=3
+allow-markup=true
 width=25%
-height=100%
+height=25%
+prompt=O_o
+orientation=vertical
 hide_scroll=true
