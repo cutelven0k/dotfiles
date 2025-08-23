@@ -1,0 +1,3 @@
+[core]
+	editor = vscodium --wait
+	pager = bat --paging=always
