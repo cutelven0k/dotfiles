@@ -11,6 +11,8 @@
 <img src="assets/main.gif"/>
 <img src="assets/wofi.png"/>
 <img src="assets/vscodium.png"/>
+<img src="assets/btop.png"/>
+<img src="assets/select_wallpaper.png"/>
 
 # 🤖 details
 - os: [**`arch linux`**](https://archlinux.org/)
