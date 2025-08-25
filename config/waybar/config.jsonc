@@ -28,11 +28,33 @@
         "tray"
     ],
 
+    "custom/separator": {
+        "format": "|",
+        "interval": "once"
+    },
     "custom/layout": {
         "exec": "layout.sh",
         "interval": 1,
         "format": "{}",
         "tooltip": false
+    },
+    "custom/weather": {
+        "exec": "weather.sh Moscow",
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": true,
+        "interval": 1800
+    },
+    "custom/airplane_mode": {
+        "format": "{icon}",
+        "format-icons": {
+            "on": "󰀞",
+            "off": "󰀝"
+        },
+        "exec": "airplane_mode.sh status",
+        "interval": 1,
+        "return-type": "json",
+        "on-click": "airplane_mode.sh toggle"
     },
 
     "mpd": {
@@ -46,45 +68,6 @@
         "interval": 1,
         "on-click": "kitty -e rmpc "
     },
-
-    "custom/weather": {
-        "exec": "weather.sh Moscow",
-        "return-type": "json",
-        "format": "{}",
-        "tooltip": true,
-        "interval": 1800
-    },
-
-    "clock": {
-        "interval": 60,
-        "tooltip": true,
-        "format": "{:%H:%M}",
-        "tooltip-format": "{:%d/%m/%Y}"
-    },
-
-    "pulseaudio": {
-        "format": "{volume}% {icon}",
-        "format-muted": "{icon}",
-        "format-icons": {
-            "headphone": "󰋋",
-            "default": [
-                "󰕿",
-                "󰖀",
-                "󰕾"
-            ]
-        },
-        "scroll-step": 1,
-        "on-click": "kitty -e ncpamixer"
-    },
-
-    "bluetooth": {
-        "format": "",
-        "format-disabled": "󰂲",
-        "format-connected": "󰂰",
-        "on-click": "kitty -e bluetui",
-        "tooltip-format": "{num_connections}"
-    },
-
     "network": {
         "interface": "wlan0",
         "format": "{icon}",
@@ -100,19 +83,27 @@
         "interval": 1,
         "tooltip-format": "{ifname}"
     },
-
-    "custom/airplane_mode": {
-        "format": "{icon}",
-        "format-icons": {
-            "on": "󰀞",
-            "off": "󰀝"
-        },
-        "exec": "airplane_mode.sh status",
-        "interval": 1,
-        "return-type": "json",
-        "on-click": "airplane_mode.sh toggle"
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂰",
+        "on-click": "kitty -e bluetui",
+        "tooltip-format": "{num_connections}"
     },
-
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "{icon}",
+        "format-icons": {
+            "headphone": "󰋋",
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
+        },
+        "scroll-step": 1,
+        "on-click": "kitty -e ncpamixer"
+    },
     "battery": {
         "format": "{capacity}% {icon}",
         "states": {
@@ -137,14 +128,15 @@
             "on-charging-100": "battery.sh --full"
         }
     },
-
     "tray": {
         "icon-size": 13,
         "spacing": 10
     },
 
-    "custom/separator": {
-        "format": "|",
-        "interval": "once"
+    "clock": {
+        "interval": 60,
+        "tooltip": true,
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%d/%m/%Y}"
     }
 }
