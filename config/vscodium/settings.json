@@ -54,7 +54,6 @@
         "editorOverviewRuler.infoForeground": "#0000",
         "editorOverviewRuler.border": "#0000"
     },
-    "workbench.activityBar.location": "hidden",
     "workbench.layoutControl.enabled": false,
     "window.customTitleBarVisibility": "never",
     "window.titleBarStyle": "native",
