@@ -5,7 +5,7 @@
     notification_limit = 5
     origin = bottom-right
     gap_size = 5
-    font = Fira Code 9
+    font = FiraCode Nerd Font 9
     format = "<b>%s</b>\n%b"
     corner_radius = 2
     mouse_right_click = close_all
