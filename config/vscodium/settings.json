@@ -87,5 +87,6 @@
     "C_Cpp.intelliSenseCacheSize": 0,
     "[cpp]": {
         "editor.defaultFormatter": "xaver.clang-format"
-    }
+    },
+    "http.proxy": "socks5://127.0.0.1:9050"
 }
