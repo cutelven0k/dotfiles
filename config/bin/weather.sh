@@ -53,7 +53,7 @@ check_dependencies
 for i in {1..5}
 do
     if (( VERBOSE )); then
-        echo -e "${YELLOW}Attempt $i to fetch weather for $1...${NC}"
+        echo -e "${YELLOW}Attempt $i to fetch weather for ${ARGS[0]}...${NC}"
     fi
 
     if ! curl -s --head https://wttr.in &>/dev/null; then
