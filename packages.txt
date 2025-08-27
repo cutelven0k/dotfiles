@@ -29,7 +29,7 @@ bat
 exa
 yazi
 keepassxc
-pika-backup
+vorta
 ffmpeg
 mpv
 wf-recorder
@@ -40,6 +40,11 @@ mpc
 rmpc
 tgpt
 krita
+yt-dlp
+ly
+grim
+slurp
+swappy
 
 [AUR]
 bluetui
@@ -48,3 +53,4 @@ ncpamixer
 vscodium-bin
 librewolf-bin
 obfs4proxy
+onlyoffice-bin
