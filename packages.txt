@@ -17,6 +17,7 @@ torsocks
 telegram-desktop
 pulseaudio
 pulseaudio-alsa
+pulseaudio-bluetooth
 audacity
 hyprland
 kitty
