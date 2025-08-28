@@ -8,6 +8,7 @@ hyprpicker
 hyprlock
 hyprsunset
 hyprpaper
+hypridle
 dunst
 curl
 jq
@@ -46,6 +47,13 @@ ly
 grim
 slurp
 swappy
+clang
+cmake
+gdb
+cava
+feh
+dust
+solanum
 
 [AUR]
 bluetui
