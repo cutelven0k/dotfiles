@@ -53,7 +53,12 @@ gdb
 cava
 feh
 dust
-solanum
+sof-firmware
+tree
+lcov
+chromium
+exfatprogs
+udisksctl
 
 [AUR]
 bluetui
@@ -63,3 +68,6 @@ vscodium-bin
 librewolf-bin
 obfs4proxy
 onlyoffice-bin
+
+[SNAP]
+singularityapp
