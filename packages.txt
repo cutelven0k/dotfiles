@@ -51,16 +51,19 @@ clang
 cmake
 gdb
 cava
-feh
 dust
 sof-firmware
 tree
 lcov
 chromium
 exfatprogs
-udisksctl
+udisks2
+reflector
+man
+os-prober
 
 [AUR]
+yay - (sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si)
 bluetui
 impala
 ncpamixer
@@ -68,6 +71,8 @@ vscodium-bin
 librewolf-bin
 obfs4proxy
 onlyoffice-bin
+snapd
+qview
 
 [SNAP]
 singularityapp
