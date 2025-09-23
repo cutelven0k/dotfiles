@@ -60,6 +60,7 @@ exfatprogs
 udisks2
 reflector
 man
+7zip
 os-prober
 
 [AUR]
