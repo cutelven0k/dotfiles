@@ -6,7 +6,7 @@ noto-fonts-emoji
 libnotify
 hyprpicker
 hyprlock
-hyprsunset
+wlsunset
 hyprpaper
 hypridle
 dunst
